@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="MAIN" Id="{9c6917e1-7882-4283-8684-162549e06f53}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	RawNumber		:LREAL := 2.56870000002;
+	DecimalPlaces	:USINT := 3;
+	RoundedNumber	:LREAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[RoundedNumber := fnRoundLREAL(RawNumber, DecimalPlaces);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
