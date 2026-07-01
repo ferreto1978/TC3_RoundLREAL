@@ -5,12 +5,21 @@
 VAR
 	RawNumber		:LREAL := 2.56870000002;
 	DecimalPlaces	:USINT := 3;
-	RoundedNumber	:LREAL;
-	RoundedNumber_m2	:LREAL;
+	RoundedNumber1	:LREAL;
+	RoundedNumber2	:LREAL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[RoundedNumber := fnRoundLREAL(RawNumber, DecimalPlaces);
-RoundedNumber_m2 := fnRoundLREAL(RawNumber, DecimalPlaces);
+      <ST><![CDATA[// Method 1: Uses LINT
+RoundedNumber1 := fnRoundLREAL(
+	NumberToRound := RawNumber,
+	Decimals := DecimalPlaces
+);
+
+// Method 2: Uses LTRUNC but requires Tc2_Math library
+RoundedNumber2 := fnRoundLREAL_TRUNC(
+	NumberToRound := RawNumber,
+	Decimals := DecimalPlaces
+);
 ]]></ST>
     </Implementation>
   </POU>

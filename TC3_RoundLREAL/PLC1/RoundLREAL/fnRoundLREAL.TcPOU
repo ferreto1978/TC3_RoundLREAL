@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="fnRoundLREAL" Id="{d7fd5d9b-dc47-47b5-8184-e7d25158acf9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION fnRoundLREAL : LREAL
 VAR_INPUT
@@ -16,7 +16,7 @@ END_VAR]]></Declaration>
 rMultiplier := EXPT(10, Decimals);
 
 // Shift decimal x positions to the right 
-rRoundREAL := NumberToRound * rMultiplier;
+rRoundREAL := (NumberToRound * rMultiplier) + 0.5;
 
 // Round the number by converting it to an integer (use LINT for large numbers) 
 iRoundINT := LREAL_TO_LINT(rRoundREAL);

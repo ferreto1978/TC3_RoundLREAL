@@ -21,17 +21,18 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Programs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RoundLREAL\fnRoundLREAL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RoundLREAL\fnRoundLREAL_Method2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="RoundLREAL\MAIN.TcPOU">
+    <Compile Include="RoundLREAL\fnRoundLREAL_TRUNC.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Programs" />
     <Folder Include="RoundLREAL" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="fnRoundLREAL_Method2" Id="{798d1f67-43a9-44cd-91d7-eaba9838cdcd}" SpecialFunc="None">
-    <Declaration><![CDATA[// You will need Tc2_Math for this one
-FUNCTION fnRoundLREAL_Method2 : LREAL
+  <POU Name="fnRoundLREAL_TRUNC" Id="{798d1f67-43a9-44cd-91d7-eaba9838cdcd}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION fnRoundLREAL_TRUNC : LREAL
 VAR_INPUT
 	NumberToRound		:LREAL;		// Number that needs rounding
 	Decimals			:USINT;		// Decimal places wanted
@@ -16,7 +15,7 @@ END_VAR]]></Declaration>
 rMultiplier := EXPT(10, Decimals);
 
 // Shift decimal x positions to the right 
-rRoundREAL := NumberToRound * rMultiplier;
+rRoundREAL := (NumberToRound * rMultiplier) + 0.5;
 
 // Round the number by converting it to an integer (use LINT for large numbers) 
 rRoundREAL := LTRUNC(rRoundREAL);
@@ -25,7 +24,7 @@ rRoundREAL := LTRUNC(rRoundREAL);
 rRoundREAL := rRoundREAL / rMultiplier;
 
 // Return result
-fnRoundLREAL_Method2 := rRoundREAL;
+fnRoundLREAL_TRUNC := rRoundREAL;
 ]]></ST>
     </Implementation>
   </POU>

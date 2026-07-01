@@ -3,10 +3,13 @@ TwinCAT 3 function that rounds an LREAL (64bit REAL) to a specific number of dec
 
 Example:
 ```
-RoundedNumber := fnRoundLREAL(2.554800000002, 3);
+RoundedNumber := fnRoundLREAL(
+	NumberToRound := 2.554800000002,
+	Decimals := 3
+);
 // Result = 2.555
 ```
 
-There are 2 ethods available.
+There are 2 methods available.
 - Method 1: Uses convertion to LINT
-- Method 2: Uses LTRUNC from the Tc2_Math library
+- Method 2: Uses LTRUNC but requires the **Tc2_Math** library
