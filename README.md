@@ -6,3 +6,7 @@ Example:
 RoundedNumber := fnRoundLREAL(2.554800000002, 3);
 // Result = 2.555
 ```
+
+There are 2 ethods available.
+- Method 1: Uses convertion to LINT
+- Method 2: Uses LTRUNC from the Tc2_Math library
